@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdbool.h>
 
 bool isValid(char* s) {
@@ -24,4 +25,16 @@ bool isValid(char* s) {
     }
 
     return top == -1;
+}
+
+int main() {
+    char test1[] = "()[]{}";
+    char test2[] = "(]";
+    char test3[] = "{[()]}";
+
+    printf("%s -> %s\n", test1, isValid(test1) ? "true" : "false");
+    printf("%s -> %s\n", test2, isValid(test2) ? "true" : "false");
+    printf("%s -> %s\n", test3, isValid(test3) ? "true" : "false");
+
+    return 0;
 }
